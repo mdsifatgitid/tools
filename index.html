@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>পোর্টফোলিও পেজ</title>
+    <title>Md Shahiduzzaman Sifat</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts (Inter) -->
@@ -13,20 +13,21 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f0f2f5;
+            background-color: #f8fafc; /* slate-50 */
         }
         .nav-shadow {
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.07);
         }
         .card-hover {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e2e8f0; /* slate-200 */
         }
         .card-hover:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
         }
-        .gemini-feature-card {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        .hero-gradient {
+            background: linear-gradient(135deg, #4f46e5 0%, #a5b4fc 100%);
         }
         .loader {
             border: 4px solid #f3f3f3;
@@ -49,9 +50,9 @@
             flex-direction: column;
             gap: 12px;
             padding: 15px;
-            background-color: #eef2ff;
+            background-color: #f1f5f9; /* slate-100 */
             border-radius: 16px;
-            border: 1px solid #c7d2fe;
+            border: 1px solid #e2e8f0; /* slate-200 */
         }
         .message {
             padding: 10px 15px;
@@ -69,7 +70,7 @@
         }
         .gemini-message {
             background-color: #ffffff;
-            color: #374151;
+            color: #334155; /* slate-700 */
             align-self: flex-start;
             border-bottom-left-radius: 2px;
             box-shadow: 0 1px 2px rgba(0,0,0,0.05);
@@ -81,146 +82,125 @@
         }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-slate-50 text-slate-800">
 
     <!-- API Key Modal -->
-    <div id="apiKeyModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center hidden">
+    <div id="apiKeyModal" class="fixed inset-0 bg-black bg-opacity-60 z-50 flex justify-center items-center hidden">
         <div class="bg-white p-8 rounded-lg shadow-2xl w-11/12 md:w-1/3 text-center">
             <h3 class="text-2xl font-bold mb-4">Gemini API কী প্রয়োজন</h3>
-            <p class="mb-6 text-gray-600">এই ফিচারটি ব্যবহার করার জন্য আপনার Gemini API কী প্রয়োজন। অনুগ্রহ করে আপনার কী নিচের ইনপুট ফিল্ডে দিন।</p>
+            <p class="mb-6 text-slate-600">এই ফিচারটি ব্যবহার করার জন্য আপনার Gemini API কী প্রয়োজন। অনুগ্রহ করে আপনার কী নিচের ইনপুট ফিল্ডে দিন।</p>
             <input type="password" id="apiKeyInput" placeholder="আপনার API কী এখানে দিন" class="w-full px-4 py-2 border rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-indigo-500">
             <div class="flex justify-end space-x-4">
-                <button id="cancelApiKey" class="px-6 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300">বাতিল</button>
+                <button id="cancelApiKey" class="px-6 py-2 bg-slate-200 text-slate-800 rounded-lg hover:bg-slate-300">বাতিল</button>
                 <button id="saveApiKey" class="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700">সেভ করুন</button>
             </div>
         </div>
     </div>
 
     <!-- নেভিগেশন বার -->
-    <nav class="bg-white p-4 nav-shadow sticky top-0 z-40">
+    <nav class="bg-white/80 backdrop-blur-md p-4 nav-shadow sticky top-0 z-40">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-indigo-600">আমার পোর্টফোলিও</a>
+            <a href="#" class="text-2xl font-bold text-indigo-600">Welcome To This Site</a>
             <div class="hidden md:flex items-center space-x-6">
-                <a href="#home" class="text-gray-600 hover:text-indigo-600 transition duration-300">হোম</a>
-                <a href="#projects" class="text-gray-600 hover:text-indigo-600 transition duration-300">প্রজেক্ট</a>
-                <a href="#gemini-features" class="text-gray-600 hover:text-indigo-600 transition duration-300">AI ফিচার</a>
-                <a href="#chatbot" class="text-gray-600 hover:text-indigo-600 transition duration-300">AI চ্যাটবট</a>
-                <a href="#about" class="text-gray-600 hover:text-indigo-600 transition duration-300">আমার সম্পর্কে</a>
-                <a href="#contact" class="text-gray-600 hover:text-indigo-600 transition duration-300">যোগাযোগ</a>
+                <a href="#home" class="text-slate-600 hover:text-indigo-600 transition duration-300">হোম</a>
+                <a href="#projects" class="text-slate-600 hover:text-indigo-600 transition duration-300">প্রজেক্ট</a>
+                <a href="#chatbot" class="text-slate-600 hover:text-indigo-600 transition duration-300">AI চ্যাটবট</a>
+                <a href="#about" class="text-slate-600 hover:text-indigo-600 transition duration-300">আমার সম্পর্কে</a>
+                <a href="#contact" class="text-slate-600 hover:text-indigo-600 transition duration-300">যোগাযোগ</a>
             </div>
             <div class="md:hidden">
-                <button id="mobile-menu-button" class="text-gray-600 focus:outline-none">
+                <button id="mobile-menu-button" class="text-slate-600 focus:outline-none">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
                 </button>
             </div>
         </div>
         <div id="mobile-menu" class="hidden md:hidden mt-4">
-            <a href="#home" class="block py-2 px-4 text-sm text-gray-600 hover:bg-indigo-50 rounded-lg">হোম</a>
-            <a href="#projects" class="block py-2 px-4 text-sm text-gray-600 hover:bg-indigo-50 rounded-lg">প্রজেক্ট</a>
-            <a href="#gemini-features" class="block py-2 px-4 text-sm text-gray-600 hover:bg-indigo-50 rounded-lg">AI ফিচার</a>
-            <a href="#chatbot" class="block py-2 px-4 text-sm text-gray-600 hover:bg-indigo-50 rounded-lg">AI চ্যাটবট</a>
-            <a href="#about" class="block py-2 px-4 text-sm text-gray-600 hover:bg-indigo-50 rounded-lg">আমার সম্পর্কে</a>
-            <a href="#contact" class="block py-2 px-4 text-sm text-gray-600 hover:bg-indigo-50 rounded-lg">যোগাযোগ</a>
+            <a href="#home" class="block py-2 px-4 text-sm text-slate-600 hover:bg-indigo-50 rounded-lg">হোম</a>
+            <a href="#projects" class="block py-2 px-4 text-sm text-slate-600 hover:bg-indigo-50 rounded-lg">প্রজেক্ট</a>
+            <a href="#chatbot" class="block py-2 px-4 text-sm text-slate-600 hover:bg-indigo-50 rounded-lg">AI চ্যাটবট</a>
+            <a href="#about" class="block py-2 px-4 text-sm text-slate-600 hover:bg-indigo-50 rounded-lg">আমার সম্পর্কে</a>
+            <a href="#contact" class="block py-2 px-4 text-sm text-slate-600 hover:bg-indigo-50 rounded-lg">যোগাযোগ</a>
         </div>
     </nav>
 
     <!-- প্রধান কন্টেন্ট -->
     <main class="container mx-auto p-4 md:p-8">
-        <header id="home" class="text-center py-16">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4">ওয়েব ডেভেলপমেন্টে স্বাগতম</h1>
-            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">আমি একজন ওয়েব ডেভেলপার এবং এটি আমার তৈরি করা কিছু প্রজেক্টের সংগ্রহ। এখানে আপনি আমার দক্ষতা এবং কাজের নমুনা দেখতে পাবেন।</p>
-            <a href="#projects" class="mt-8 inline-block bg-indigo-600 text-white font-semibold px-8 py-3 rounded-full hover:bg-indigo-700 transition duration-300">আমার কাজ দেখুন</a>
+        <header id="home" class="text-center py-24 md:py-32 hero-gradient rounded-3xl">
+             <a href="https://mdsifatgitid.github.io" target="_blank" class="mt-8 inline-block bg-white text-indigo-600 font-semibold px-10 py-4 rounded-full hover:bg-slate-100 transition duration-300 shadow-lg text-lg">বিজয় কনভার্টার</a>
         </header>
 
-        <section id="projects" class="py-16">
-            <h2 class="text-3xl font-bold text-center mb-12">আমার প্রজেক্টসমূহ</h2>
+        <section id="projects" class="py-20">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-900">আমার প্রজেক্টসমূহ</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover">
+                <!-- প্রজেক্ট কার্ড ১ -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
                     <img src="https://placehold.co/600x400/93c5fd/3730a3?text=ক্যালকুলেটর" alt="ক্যালকুলেটর প্রজেক্ট" class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">কম্বাইন্ড ক্যালকুলেটর</h3>
-                        <p class="text-gray-600 mb-4">এটি একটি বহু-কার্যকরী ক্যালকুলেটর যা সাধারণ গণনা, বয়স গণনা, এবং তারিখ রূপান্তরের সুবিধা প্রদান করে।</p>
+                        <h3 class="text-xl font-bold mb-2 text-slate-900">কম্বাইন্ড ক্যালকুলেটর</h3>
+                        <p class="text-slate-600 mb-4">এটি একটি বহু-কার্যকরী ক্যালকুলেটর যা সাধারণ গণনা, বয়স গণনা, এবং তারিখ রূপান্তরের সুবিধা প্রদান করে।</p>
                         <a href="./Calculator v27.html" target="_blank" class="inline-block bg-indigo-100 text-indigo-700 font-semibold px-4 py-2 rounded-full text-sm hover:bg-indigo-200 transition duration-300">প্রজেক্ট দেখুন</a>
                     </div>
                 </div>
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover">
+                <!-- প্রজেক্ট কার্ড ২ -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <img src="https://placehold.co/600x400/67e8f9/0f766e?text=বিজয়+কনভার্টার" alt="বিজয় কনভার্টার প্রজেক্ট" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-slate-900">বিজয় কনভার্টার</h3>
+                        <p class="text-slate-600 mb-4">একটি সহজ টুল যা বিজয় কীবোর্ড লেআউটে লেখা টেক্সটকে ইউনিকোডে রূপান্তর করে।</p>
+                        <a href="#" class="inline-block bg-slate-200 text-slate-700 font-semibold px-4 py-2 rounded-full text-sm">শীঘ্রই আসছে</a>
+                    </div>
+                </div>
+                <!-- প্রজেক্ট কার্ড ৩ -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
                     <img src="https://placehold.co/600x400/a5b4fc/1e1b4b?text=ই-কমার্স" alt="ই-কমার্স ওয়েবসাইট" class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">ই-কমার্স প্ল্যাটফর্ম</h3>
-                        <p class="text-gray-600 mb-4">একটি আধুনিক এবং প্রতিক্রিয়াশীল ই-কমার্স ওয়েবসাইট যেখানে ব্যবহারকারীরা পণ্য দেখতে এবং কিনতে পারে।</p>
-                        <a href="#" class="inline-block bg-gray-200 text-gray-700 font-semibold px-4 py-2 rounded-full text-sm">শীঘ্রই আসছে</a>
+                        <h3 class="text-xl font-bold mb-2 text-slate-900">ই-কমার্স প্ল্যাটফর্ম</h3>
+                        <p class="text-slate-600 mb-4">একটি আধুনিক এবং প্রতিক্রিয়াশীল ই-কমার্স ওয়েবসাইট যেখানে ব্যবহারকারীরা পণ্য দেখতে এবং কিনতে পারে।</p>
+                        <a href="#" class="inline-block bg-slate-200 text-slate-700 font-semibold px-4 py-2 rounded-full text-sm">শীঘ্রই আসছে</a>
                     </div>
-                </div>
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover">
-                    <img src="https://placehold.co/600x400/818cf8/1e1b4b?text=ব্লগ" alt="ব্লগিং প্ল্যাটফর্ম" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">ব্লগিং প্ল্যাটফর্ম</h3>
-                        <p class="text-gray-600 mb-4">একটি সম্পূর্ণ ব্লগিং প্ল্যাটফর্ম যেখানে লেখকরা তাদের লেখা প্রকাশ করতে পারেন এবং পাঠকরা মন্তব্য করতে পারেন।</p>
-                        <a href="#" class="inline-block bg-gray-200 text-gray-700 font-semibold px-4 py-2 rounded-full text-sm">শীঘ্রই আসছে</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="gemini-features" class="py-16">
-            <h2 class="text-3xl font-bold text-center mb-12">Gemini AI ফিচারসমূহ</h2>
-            <div class="bg-white rounded-lg shadow-lg p-8 md:p-12 gemini-feature-card">
-                <h3 class="text-2xl font-bold text-center mb-2">প্রজেক্ট আইডিয়া জেনারেটর</h3>
-                <p class="text-gray-600 text-center mb-8">যেকোনো প্রযুক্তি বা কীওয়ার্ড ব্যবহার করে নতুন প্রজেক্টের আইডিয়া তৈরি করুন।</p>
-                <div class="max-w-2xl mx-auto">
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <input id="ideaKeyword" type="text" placeholder="যেমন: JavaScript, React, API..." class="flex-grow px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                        <button id="generateIdeaBtn" class="bg-indigo-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-indigo-700 transition duration-300 flex items-center justify-center">
-                            <span class="mr-2">✨ আইডিয়া তৈরি করুন</span>
-                        </button>
-                    </div>
-                    <div id="ideaResult" class="mt-8 p-6 bg-white/70 rounded-lg shadow-inner min-h-[100px]">
-                        <p class="text-gray-500 text-center">আপনার আইডিয়া এখানে প্রদর্শিত হবে...</p>
-                    </div>
-                    <div id="ideaLoader" class="hidden"><div class="loader"></div></div>
                 </div>
             </div>
         </section>
         
         <!-- Gemini Chatbot Section -->
-        <section id="chatbot" class="py-16">
-            <h2 class="text-3xl font-bold text-center mb-12">Gemini AI চ্যাটবট</h2>
-            <div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl p-6">
+        <section id="chatbot" class="py-20">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-900">Gemini AI চ্যাটবট</h2>
+            <div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl p-6 border border-slate-200">
                 <div class="flex justify-between items-center mb-4">
                     <h3 class="text-xl font-semibold">Gemini এর সাথে চ্যাট করুন</h3>
-                    <button id="clearChatBtn" class="text-sm text-gray-500 hover:text-red-500 transition-colors">চ্যাট মুছুন</button>
+                    <button id="clearChatBtn" class="text-sm text-slate-500 hover:text-red-500 transition-colors">চ্যাট মুছুন</button>
                 </div>
                 <div id="chatWindow" class="chat-window mb-4">
                     <!-- চ্যাট বার্তা এখানে যুক্ত করা হবে -->
                 </div>
-                <div id="chatLoader" class="hidden text-center"><p class="text-sm text-gray-500">Gemini ভাবছে...</p></div>
+                <div id="chatLoader" class="hidden text-center"><p class="text-sm text-slate-500">Gemini ভাবছে...</p></div>
                 <div class="flex gap-4">
-                    <input type="text" id="chatInput" placeholder="এখানে আপনার প্রশ্ন লিখুন..." class="flex-grow px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <input type="text" id="chatInput" placeholder="এখানে আপনার প্রশ্ন লিখুন..." class="flex-grow px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-slate-50">
                     <button id="sendChatBtn" class="bg-indigo-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-indigo-700 transition duration-300">পাঠান</button>
                 </div>
             </div>
         </section>
 
-        <section id="about" class="py-16 bg-white rounded-lg shadow-lg my-16 p-8 md:p-12">
+        <section id="about" class="py-20 bg-white rounded-2xl shadow-lg my-16 p-8 md:p-12 border border-slate-200">
             <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-3xl font-bold mb-6">আমার সম্পর্কে</h2>
-                <p class="text-gray-600 leading-relaxed">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-slate-900">আমার সম্পর্কে</h2>
+                <p class="text-slate-600 leading-relaxed text-lg">
                     আমি একজন প্যাশনেট ওয়েব ডেভেলপার, যার ডিজাইন এবং কোডিং-এর প্রতি গভীর আগ্রহ রয়েছে। আমি ব্যবহারকারী-বান্ধব এবং আকর্ষণীয় ওয়েব অ্যাপ্লিকেশন তৈরি করতে পছন্দ করি। আমার দক্ষতা HTML, CSS, JavaScript এবং আধুনিক ফ্রেমওয়ার্কের উপর ভিত্তি করে তৈরি। আমি সবসময় নতুন প্রযুক্তি শিখতে এবং নিজেকে উন্নত করতে আগ্রহী।
                 </p>
             </div>
         </section>
     </main>
 
-    <footer id="contact" class="bg-gray-800 text-white py-12">
+    <footer id="contact" class="bg-slate-900 text-white py-16">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div class="text-center md:text-left">
                     <h2 class="text-2xl font-bold mb-4">যোগাযোগ করুন</h2>
-                    <p class="mb-6 text-gray-400">যেকোনো প্রশ্ন বা সহযোগিতার জন্য নিচের ফর্মটি পূরণ করুন।</p>
+                    <p class="mb-6 text-slate-400">যেকোনো প্রশ্ন বা সহযোগিতার জন্য নিচের ফর্মটি পূরণ করুন।</p>
                     <form id="contactForm">
-                        <div class="mb-4"><input type="text" placeholder="আপনার নাম" class="w-full bg-gray-700 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"></div>
-                        <div class="mb-4"><input type="email" placeholder="আপনার ইমেইল" class="w-full bg-gray-700 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"></div>
-                        <div class="mb-4"><textarea id="contactMessage" placeholder="আপনার বার্তা" rows="4" class="w-full bg-gray-700 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea></div>
+                        <div class="mb-4"><input type="text" placeholder="আপনার নাম" class="w-full bg-slate-800 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 border border-slate-700"></div>
+                        <div class="mb-4"><input type="email" placeholder="আপনার ইমেইল" class="w-full bg-slate-800 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 border border-slate-700"></div>
+                        <div class="mb-4"><textarea id="contactMessage" placeholder="আপনার বার্তা" rows="4" class="w-full bg-slate-800 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 border border-slate-700"></textarea></div>
                         <div id="messageLoader" class="hidden text-sm text-indigo-400 mb-2"> উন্নত করা হচ্ছে...</div>
                         <div class="flex flex-col sm:flex-row gap-4">
                             <button type="submit" class="w-full sm:w-auto bg-indigo-600 text-white font-semibold px-6 py-2 rounded-lg hover:bg-indigo-700 transition duration-300">বার্তা পাঠান</button>
@@ -231,11 +211,11 @@
                 <div class="text-center md:text-right">
                     <h3 class="text-xl font-bold mb-4">সোশ্যাল মিডিয়াতে খুঁজুন</h3>
                     <div class="flex justify-center md:justify-end space-x-6 mb-8">
-                        <a href="https://github.com" target="_blank" class="text-gray-400 hover:text-white transition duration-300"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.745 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg></a>
-                        <a href="https://linkedin.com" target="_blank" class="text-gray-400 hover:text-white transition duration-300"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
-                        <a href="https://twitter.com" target="_blank" class="text-gray-400 hover:text-white transition duration-300"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                        <a href="https://github.com" target="_blank" class="text-slate-400 hover:text-white transition duration-300"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.745 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg></a>
+                        <a href="https://linkedin.com" target="_blank" class="text-slate-400 hover:text-white transition duration-300"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+                        <a href="https://twitter.com" target="_blank" class="text-slate-400 hover:text-white transition duration-300"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
                     </div>
-                    <p class="text-gray-500 text-sm mt-8">&copy; ২০২৫ - সর্বস্বত্ব সংরক্ষিত।</p>
+                    <p class="text-slate-500 text-sm mt-8">&copy; ২০২৫ - সর্বস্বত্ব সংরক্ষিত।</p>
                 </div>
             </div>
         </div>
@@ -243,10 +223,12 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Mobile menu toggle
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
             mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
 
+            // API Key Modal Logic
             const apiKeyModal = document.getElementById('apiKeyModal');
             const saveApiKeyBtn = document.getElementById('saveApiKey');
             const cancelApiKeyBtn = document.getElementById('cancelApiKey');
@@ -267,6 +249,7 @@
 
             cancelApiKeyBtn.addEventListener('click', () => apiKeyModal.classList.add('hidden'));
 
+            // Gemini API Call Function
             async function callGeminiApi(prompt, isChat = false, chatHistory = []) {
                 const apiKey = getApiKey();
                 if (!apiKey) {
@@ -303,28 +286,7 @@
                 }
             }
 
-            const generateIdeaBtn = document.getElementById('generateIdeaBtn');
-            const ideaKeywordInput = document.getElementById('ideaKeyword');
-            const ideaResultDiv = document.getElementById('ideaResult');
-            const ideaLoader = document.getElementById('ideaLoader');
-
-            generateIdeaBtn.addEventListener('click', async () => {
-                const keyword = ideaKeywordInput.value.trim();
-                if (!keyword) return alert('অনুগ্রহ করে একটি কীওয়ার্ড লিখুন।');
-                ideaResultDiv.innerHTML = '';
-                ideaLoader.classList.remove('hidden');
-                generateIdeaBtn.disabled = true;
-                const prompt = `Generate a creative and practical project idea for a web developer portfolio using the keyword: "${keyword}". Provide a title, a short description, and a list of 3-4 key features. Format the response in simple HTML with a <h4> for the title, a <p> for the description, and an <ul> with <li> for the features. The response should be in Bengali.`;
-                const result = await callGeminiApi(prompt);
-                ideaLoader.classList.add('hidden');
-                generateIdeaBtn.disabled = false;
-                if (result) {
-                    ideaResultDiv.innerHTML = result;
-                } else {
-                    ideaResultDiv.innerHTML = '<p class="text-red-500">আইডিয়া তৈরি করতে ব্যর্থ হয়েছে। অনুগ্রহ করে আবার চেষ্টা করুন।</p>';
-                }
-            });
-
+            // Improve Message Logic
             const improveMessageBtn = document.getElementById('improveMessageBtn');
             const contactMessageTextarea = document.getElementById('contactMessage');
             const messageLoader = document.getElementById('messageLoader');
@@ -345,13 +307,14 @@
                 }
             });
 
+            // Contact Form Submission
             document.getElementById('contactForm').addEventListener('submit', (e) => {
                 e.preventDefault();
                 alert('আপনার বার্তা পাঠানোর জন্য ধন্যবাদ!');
                 e.target.reset();
             });
 
-            // চ্যাটবট লজিক
+            // Chatbot Logic
             const chatWindow = document.getElementById('chatWindow');
             const chatInput = document.getElementById('chatInput');
             const sendChatBtn = document.getElementById('sendChatBtn');
@@ -401,7 +364,7 @@
                 addMessageToChat('হ্যালো! আমি আপনাকে কীভাবে সাহায্য করতে পারি?', 'gemini');
             });
             
-            // প্রাথমিক চ্যাট বার্তা
+            // Initial chat message
             addMessageToChat('হ্যালো! আমি আপনাকে কীভাবে সাহায্য করতে পারি?', 'gemini');
         });
     </script>
